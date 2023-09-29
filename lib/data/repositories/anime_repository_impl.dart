@@ -5,6 +5,7 @@ import 'package:anime_ku/common/failure.dart';
 import 'package:anime_ku/data/datasources/remote/anime_remote_data_source.dart';
 import 'package:anime_ku/domain/entities/anime_detail/response/response_detail_anime.dart';
 import 'package:anime_ku/domain/entities/anime_ongoing/response/response_anime_ongoing.dart';
+import 'package:anime_ku/domain/entities/search/response_search/search_response.dart';
 import 'package:anime_ku/domain/repositories/anime_repository.dart';
 import 'package:dartz/dartz.dart';
 
@@ -31,7 +32,19 @@ class AnimeRepositoryImpl implements AnimeRepository {
     } on ServerException {
       return const Left(ServerFailure(''));
     } on SocketException {
-      return const Left(ConnectionFailure('Failed ro connect'));
+      return const Left(ConnectionFailure('Failed to connect'));
+    }
+  }
+
+  @override
+  Future<Either<Failure, ResponseSearch>> getAnimeSearch(String query) async {
+    try {
+      final result = await remoteDataSource.getAnimeSearch(query);
+      return Right(result);
+    } on ServerException {
+      return const Left(ServerFailure(""));
+    } on SocketException {
+      return const Left(ConnectionFailure('Failed to connect'));
     }
   }
 }

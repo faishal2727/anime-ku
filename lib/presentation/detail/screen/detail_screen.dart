@@ -48,7 +48,7 @@ Widget _buildContent(BuildContext context, ResponseDetailAnime model) {
       Image.network(
         model.data?.thumbnail?? "",
         width: MediaQuery.of(context).size.width,
-        height: 150,
+        height: 350,
         fit: BoxFit.fill,
       ),
       Expanded(

@@ -2,6 +2,7 @@ import 'package:anime_ku/data/di/injection.dart' as di;
 import 'package:anime_ku/presentation/detail/bloc/detail_anime_bloc.dart';
 import 'package:anime_ku/presentation/home/bloc/home_bloc.dart';
 import 'package:anime_ku/presentation/home/screen/home_page.dart';
+import 'package:anime_ku/presentation/search/bloc/search_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -9,6 +10,7 @@ void main() async {
   di.init();
   runApp(const MyApp());
 }
+
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
   @override
@@ -21,7 +23,7 @@ class MyApp extends StatelessWidget {
               const HomeEvent.loadMore(),
             ),
           child: const HomePage(),
-        ),                                                                
+        ),
         BlocProvider(
           create: (context) => di.locator<DetailAnimeBloc>()
             ..add(
@@ -30,6 +32,7 @@ class MyApp extends StatelessWidget {
               ),
             ),
         ),
+        BlocProvider(create: (context) => di.locator<SearchBloc>())
       ],
       child: MaterialApp(
         title: 'aplikasi',

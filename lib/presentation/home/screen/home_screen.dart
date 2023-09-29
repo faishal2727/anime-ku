@@ -1,6 +1,7 @@
 import 'package:anime_ku/domain/entities/anime_ongoing/response/response_anime_ongoing.dart';
 import 'package:anime_ku/presentation/detail/screen/detail_screen.dart';
 import 'package:anime_ku/presentation/home/bloc/home_bloc.dart';
+import 'package:anime_ku/presentation/search/screen/search_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -12,6 +13,16 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('AnimeKu'),
+        actions: [
+          IconButton(
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const SearchScreen()));
+              },
+              icon: const Icon(Icons.search)),
+        ],
       ),
       body: Column(children: [
         Expanded(child: BlocBuilder<HomeBloc, HomeState>(
@@ -46,8 +57,8 @@ Widget buildCard(BuildContext context, ResponseAnimeOngoing model) {
             context,
             MaterialPageRoute(
               builder: (context) {
-                print("tai ${model.data!.ongoing?[index].id?? ""}");
-                return DetailScreen(id: model.data!.ongoing?[index].id?? "");
+                print("tai ${model.data!.ongoing?[index].id ?? ""}");
+                return DetailScreen(id: model.data!.ongoing?[index].id ?? "");
               },
             ),
           );
@@ -65,6 +76,7 @@ Widget buildCard(BuildContext context, ResponseAnimeOngoing model) {
                 fadeOutDuration: const Duration(seconds: 2),
                 image: model.data?.ongoing?[index].thumbnail ?? " ",
                 width: MediaQuery.of(context).size.width,
+                height: 300,
                 fit: BoxFit.fill,
               ),
               const SizedBox(height: 4.0),
