@@ -20,18 +20,21 @@ mixin _$HomeEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function() loadMore,
+    required TResult Function() loadGenre,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
     TResult? Function()? loadMore,
+    TResult? Function()? loadGenre,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function()? loadMore,
+    TResult Function()? loadGenre,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -39,18 +42,21 @@ mixin _$HomeEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(_LoadMore value) loadMore,
+    required TResult Function(_LoadGenre value) loadGenre,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
     TResult? Function(_LoadMore value)? loadMore,
+    TResult? Function(_LoadGenre value)? loadGenre,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_LoadMore value)? loadMore,
+    TResult Function(_LoadGenre value)? loadGenre,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -91,12 +97,18 @@ class __$$StartedImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$StartedImpl implements _Started {
+class _$StartedImpl with DiagnosticableTreeMixin implements _Started {
   const _$StartedImpl();
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'HomeEvent.started()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(DiagnosticsProperty('type', 'HomeEvent.started'));
   }
 
   @override
@@ -113,6 +125,7 @@ class _$StartedImpl implements _Started {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function() loadMore,
+    required TResult Function() loadGenre,
   }) {
     return started();
   }
@@ -122,6 +135,7 @@ class _$StartedImpl implements _Started {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
     TResult? Function()? loadMore,
+    TResult? Function()? loadGenre,
   }) {
     return started?.call();
   }
@@ -131,6 +145,7 @@ class _$StartedImpl implements _Started {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function()? loadMore,
+    TResult Function()? loadGenre,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -144,6 +159,7 @@ class _$StartedImpl implements _Started {
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(_LoadMore value) loadMore,
+    required TResult Function(_LoadGenre value) loadGenre,
   }) {
     return started(this);
   }
@@ -153,6 +169,7 @@ class _$StartedImpl implements _Started {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
     TResult? Function(_LoadMore value)? loadMore,
+    TResult? Function(_LoadGenre value)? loadGenre,
   }) {
     return started?.call(this);
   }
@@ -162,6 +179,7 @@ class _$StartedImpl implements _Started {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_LoadMore value)? loadMore,
+    TResult Function(_LoadGenre value)? loadGenre,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -193,12 +211,18 @@ class __$$LoadMoreImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$LoadMoreImpl implements _LoadMore {
+class _$LoadMoreImpl with DiagnosticableTreeMixin implements _LoadMore {
   const _$LoadMoreImpl();
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'HomeEvent.loadMore()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(DiagnosticsProperty('type', 'HomeEvent.loadMore'));
   }
 
   @override
@@ -215,6 +239,7 @@ class _$LoadMoreImpl implements _LoadMore {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function() loadMore,
+    required TResult Function() loadGenre,
   }) {
     return loadMore();
   }
@@ -224,6 +249,7 @@ class _$LoadMoreImpl implements _LoadMore {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
     TResult? Function()? loadMore,
+    TResult? Function()? loadGenre,
   }) {
     return loadMore?.call();
   }
@@ -233,6 +259,7 @@ class _$LoadMoreImpl implements _LoadMore {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function()? loadMore,
+    TResult Function()? loadGenre,
     required TResult orElse(),
   }) {
     if (loadMore != null) {
@@ -246,6 +273,7 @@ class _$LoadMoreImpl implements _LoadMore {
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(_LoadMore value) loadMore,
+    required TResult Function(_LoadGenre value) loadGenre,
   }) {
     return loadMore(this);
   }
@@ -255,6 +283,7 @@ class _$LoadMoreImpl implements _LoadMore {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
     TResult? Function(_LoadMore value)? loadMore,
+    TResult? Function(_LoadGenre value)? loadGenre,
   }) {
     return loadMore?.call(this);
   }
@@ -264,6 +293,7 @@ class _$LoadMoreImpl implements _LoadMore {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_LoadMore value)? loadMore,
+    TResult Function(_LoadGenre value)? loadGenre,
     required TResult orElse(),
   }) {
     if (loadMore != null) {
@@ -278,12 +308,127 @@ abstract class _LoadMore implements HomeEvent {
 }
 
 /// @nodoc
+abstract class _$$LoadGenreImplCopyWith<$Res> {
+  factory _$$LoadGenreImplCopyWith(
+          _$LoadGenreImpl value, $Res Function(_$LoadGenreImpl) then) =
+      __$$LoadGenreImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$LoadGenreImplCopyWithImpl<$Res>
+    extends _$HomeEventCopyWithImpl<$Res, _$LoadGenreImpl>
+    implements _$$LoadGenreImplCopyWith<$Res> {
+  __$$LoadGenreImplCopyWithImpl(
+      _$LoadGenreImpl _value, $Res Function(_$LoadGenreImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$LoadGenreImpl with DiagnosticableTreeMixin implements _LoadGenre {
+  const _$LoadGenreImpl();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'HomeEvent.loadGenre()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(DiagnosticsProperty('type', 'HomeEvent.loadGenre'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$LoadGenreImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() loadMore,
+    required TResult Function() loadGenre,
+  }) {
+    return loadGenre();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function()? loadMore,
+    TResult? Function()? loadGenre,
+  }) {
+    return loadGenre?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? loadMore,
+    TResult Function()? loadGenre,
+    required TResult orElse(),
+  }) {
+    if (loadGenre != null) {
+      return loadGenre();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_LoadMore value) loadMore,
+    required TResult Function(_LoadGenre value) loadGenre,
+  }) {
+    return loadGenre(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(_LoadMore value)? loadMore,
+    TResult? Function(_LoadGenre value)? loadGenre,
+  }) {
+    return loadGenre?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_LoadMore value)? loadMore,
+    TResult Function(_LoadGenre value)? loadGenre,
+    required TResult orElse(),
+  }) {
+    if (loadGenre != null) {
+      return loadGenre(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _LoadGenre implements HomeEvent {
+  const factory _LoadGenre() = _$LoadGenreImpl;
+}
+
+/// @nodoc
 mixin _$HomeState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(ResponseAnimeOngoing anime) loaded,
+    required TResult Function(ResponseGenre genre) getGenre,
     required TResult Function(String message) error,
   }) =>
       throw _privateConstructorUsedError;
@@ -292,6 +437,7 @@ mixin _$HomeState {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(ResponseAnimeOngoing anime)? loaded,
+    TResult? Function(ResponseGenre genre)? getGenre,
     TResult? Function(String message)? error,
   }) =>
       throw _privateConstructorUsedError;
@@ -300,6 +446,7 @@ mixin _$HomeState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(ResponseAnimeOngoing anime)? loaded,
+    TResult Function(ResponseGenre genre)? getGenre,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) =>
@@ -309,6 +456,7 @@ mixin _$HomeState {
     required TResult Function(Initial value) initial,
     required TResult Function(Loading value) loading,
     required TResult Function(Loaded value) loaded,
+    required TResult Function(GetGenre value) getGenre,
     required TResult Function(Error value) error,
   }) =>
       throw _privateConstructorUsedError;
@@ -317,6 +465,7 @@ mixin _$HomeState {
     TResult? Function(Initial value)? initial,
     TResult? Function(Loading value)? loading,
     TResult? Function(Loaded value)? loaded,
+    TResult? Function(GetGenre value)? getGenre,
     TResult? Function(Error value)? error,
   }) =>
       throw _privateConstructorUsedError;
@@ -325,6 +474,7 @@ mixin _$HomeState {
     TResult Function(Initial value)? initial,
     TResult Function(Loading value)? loading,
     TResult Function(Loaded value)? loaded,
+    TResult Function(GetGenre value)? getGenre,
     TResult Function(Error value)? error,
     required TResult orElse(),
   }) =>
@@ -366,12 +516,18 @@ class __$$InitialImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$InitialImpl implements Initial {
+class _$InitialImpl with DiagnosticableTreeMixin implements Initial {
   const _$InitialImpl();
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'HomeState.initial()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(DiagnosticsProperty('type', 'HomeState.initial'));
   }
 
   @override
@@ -389,6 +545,7 @@ class _$InitialImpl implements Initial {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(ResponseAnimeOngoing anime) loaded,
+    required TResult Function(ResponseGenre genre) getGenre,
     required TResult Function(String message) error,
   }) {
     return initial();
@@ -400,6 +557,7 @@ class _$InitialImpl implements Initial {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(ResponseAnimeOngoing anime)? loaded,
+    TResult? Function(ResponseGenre genre)? getGenre,
     TResult? Function(String message)? error,
   }) {
     return initial?.call();
@@ -411,6 +569,7 @@ class _$InitialImpl implements Initial {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(ResponseAnimeOngoing anime)? loaded,
+    TResult Function(ResponseGenre genre)? getGenre,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -426,6 +585,7 @@ class _$InitialImpl implements Initial {
     required TResult Function(Initial value) initial,
     required TResult Function(Loading value) loading,
     required TResult Function(Loaded value) loaded,
+    required TResult Function(GetGenre value) getGenre,
     required TResult Function(Error value) error,
   }) {
     return initial(this);
@@ -437,6 +597,7 @@ class _$InitialImpl implements Initial {
     TResult? Function(Initial value)? initial,
     TResult? Function(Loading value)? loading,
     TResult? Function(Loaded value)? loaded,
+    TResult? Function(GetGenre value)? getGenre,
     TResult? Function(Error value)? error,
   }) {
     return initial?.call(this);
@@ -448,6 +609,7 @@ class _$InitialImpl implements Initial {
     TResult Function(Initial value)? initial,
     TResult Function(Loading value)? loading,
     TResult Function(Loaded value)? loaded,
+    TResult Function(GetGenre value)? getGenre,
     TResult Function(Error value)? error,
     required TResult orElse(),
   }) {
@@ -480,12 +642,18 @@ class __$$LoadingImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$LoadingImpl implements Loading {
+class _$LoadingImpl with DiagnosticableTreeMixin implements Loading {
   const _$LoadingImpl();
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'HomeState.loading()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(DiagnosticsProperty('type', 'HomeState.loading'));
   }
 
   @override
@@ -503,6 +671,7 @@ class _$LoadingImpl implements Loading {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(ResponseAnimeOngoing anime) loaded,
+    required TResult Function(ResponseGenre genre) getGenre,
     required TResult Function(String message) error,
   }) {
     return loading();
@@ -514,6 +683,7 @@ class _$LoadingImpl implements Loading {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(ResponseAnimeOngoing anime)? loaded,
+    TResult? Function(ResponseGenre genre)? getGenre,
     TResult? Function(String message)? error,
   }) {
     return loading?.call();
@@ -525,6 +695,7 @@ class _$LoadingImpl implements Loading {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(ResponseAnimeOngoing anime)? loaded,
+    TResult Function(ResponseGenre genre)? getGenre,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -540,6 +711,7 @@ class _$LoadingImpl implements Loading {
     required TResult Function(Initial value) initial,
     required TResult Function(Loading value) loading,
     required TResult Function(Loaded value) loaded,
+    required TResult Function(GetGenre value) getGenre,
     required TResult Function(Error value) error,
   }) {
     return loading(this);
@@ -551,6 +723,7 @@ class _$LoadingImpl implements Loading {
     TResult? Function(Initial value)? initial,
     TResult? Function(Loading value)? loading,
     TResult? Function(Loaded value)? loaded,
+    TResult? Function(GetGenre value)? getGenre,
     TResult? Function(Error value)? error,
   }) {
     return loading?.call(this);
@@ -562,6 +735,7 @@ class _$LoadingImpl implements Loading {
     TResult Function(Initial value)? initial,
     TResult Function(Loading value)? loading,
     TResult Function(Loaded value)? loaded,
+    TResult Function(GetGenre value)? getGenre,
     TResult Function(Error value)? error,
     required TResult orElse(),
   }) {
@@ -619,15 +793,23 @@ class __$$LoadedImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$LoadedImpl implements Loaded {
+class _$LoadedImpl with DiagnosticableTreeMixin implements Loaded {
   const _$LoadedImpl(this.anime);
 
   @override
   final ResponseAnimeOngoing anime;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'HomeState.loaded(anime: $anime)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'HomeState.loaded'))
+      ..add(DiagnosticsProperty('anime', anime));
   }
 
   @override
@@ -653,6 +835,7 @@ class _$LoadedImpl implements Loaded {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(ResponseAnimeOngoing anime) loaded,
+    required TResult Function(ResponseGenre genre) getGenre,
     required TResult Function(String message) error,
   }) {
     return loaded(anime);
@@ -664,6 +847,7 @@ class _$LoadedImpl implements Loaded {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(ResponseAnimeOngoing anime)? loaded,
+    TResult? Function(ResponseGenre genre)? getGenre,
     TResult? Function(String message)? error,
   }) {
     return loaded?.call(anime);
@@ -675,6 +859,7 @@ class _$LoadedImpl implements Loaded {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(ResponseAnimeOngoing anime)? loaded,
+    TResult Function(ResponseGenre genre)? getGenre,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -690,6 +875,7 @@ class _$LoadedImpl implements Loaded {
     required TResult Function(Initial value) initial,
     required TResult Function(Loading value) loading,
     required TResult Function(Loaded value) loaded,
+    required TResult Function(GetGenre value) getGenre,
     required TResult Function(Error value) error,
   }) {
     return loaded(this);
@@ -701,6 +887,7 @@ class _$LoadedImpl implements Loaded {
     TResult? Function(Initial value)? initial,
     TResult? Function(Loading value)? loading,
     TResult? Function(Loaded value)? loaded,
+    TResult? Function(GetGenre value)? getGenre,
     TResult? Function(Error value)? error,
   }) {
     return loaded?.call(this);
@@ -712,6 +899,7 @@ class _$LoadedImpl implements Loaded {
     TResult Function(Initial value)? initial,
     TResult Function(Loading value)? loading,
     TResult Function(Loaded value)? loaded,
+    TResult Function(GetGenre value)? getGenre,
     TResult Function(Error value)? error,
     required TResult orElse(),
   }) {
@@ -728,6 +916,175 @@ abstract class Loaded implements HomeState {
   ResponseAnimeOngoing get anime;
   @JsonKey(ignore: true)
   _$$LoadedImplCopyWith<_$LoadedImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GetGenreImplCopyWith<$Res> {
+  factory _$$GetGenreImplCopyWith(
+          _$GetGenreImpl value, $Res Function(_$GetGenreImpl) then) =
+      __$$GetGenreImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({ResponseGenre genre});
+
+  $ResponseGenreCopyWith<$Res> get genre;
+}
+
+/// @nodoc
+class __$$GetGenreImplCopyWithImpl<$Res>
+    extends _$HomeStateCopyWithImpl<$Res, _$GetGenreImpl>
+    implements _$$GetGenreImplCopyWith<$Res> {
+  __$$GetGenreImplCopyWithImpl(
+      _$GetGenreImpl _value, $Res Function(_$GetGenreImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? genre = null,
+  }) {
+    return _then(_$GetGenreImpl(
+      null == genre
+          ? _value.genre
+          : genre // ignore: cast_nullable_to_non_nullable
+              as ResponseGenre,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $ResponseGenreCopyWith<$Res> get genre {
+    return $ResponseGenreCopyWith<$Res>(_value.genre, (value) {
+      return _then(_value.copyWith(genre: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$GetGenreImpl with DiagnosticableTreeMixin implements GetGenre {
+  const _$GetGenreImpl(this.genre);
+
+  @override
+  final ResponseGenre genre;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'HomeState.getGenre(genre: $genre)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'HomeState.getGenre'))
+      ..add(DiagnosticsProperty('genre', genre));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetGenreImpl &&
+            (identical(other.genre, genre) || other.genre == genre));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, genre);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetGenreImplCopyWith<_$GetGenreImpl> get copyWith =>
+      __$$GetGenreImplCopyWithImpl<_$GetGenreImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(ResponseAnimeOngoing anime) loaded,
+    required TResult Function(ResponseGenre genre) getGenre,
+    required TResult Function(String message) error,
+  }) {
+    return getGenre(genre);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(ResponseAnimeOngoing anime)? loaded,
+    TResult? Function(ResponseGenre genre)? getGenre,
+    TResult? Function(String message)? error,
+  }) {
+    return getGenre?.call(genre);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(ResponseAnimeOngoing anime)? loaded,
+    TResult Function(ResponseGenre genre)? getGenre,
+    TResult Function(String message)? error,
+    required TResult orElse(),
+  }) {
+    if (getGenre != null) {
+      return getGenre(genre);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Initial value) initial,
+    required TResult Function(Loading value) loading,
+    required TResult Function(Loaded value) loaded,
+    required TResult Function(GetGenre value) getGenre,
+    required TResult Function(Error value) error,
+  }) {
+    return getGenre(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Initial value)? initial,
+    TResult? Function(Loading value)? loading,
+    TResult? Function(Loaded value)? loaded,
+    TResult? Function(GetGenre value)? getGenre,
+    TResult? Function(Error value)? error,
+  }) {
+    return getGenre?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Initial value)? initial,
+    TResult Function(Loading value)? loading,
+    TResult Function(Loaded value)? loaded,
+    TResult Function(GetGenre value)? getGenre,
+    TResult Function(Error value)? error,
+    required TResult orElse(),
+  }) {
+    if (getGenre != null) {
+      return getGenre(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetGenre implements HomeState {
+  const factory GetGenre(final ResponseGenre genre) = _$GetGenreImpl;
+
+  ResponseGenre get genre;
+  @JsonKey(ignore: true)
+  _$$GetGenreImplCopyWith<_$GetGenreImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -764,15 +1121,23 @@ class __$$ErrorImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ErrorImpl implements Error {
+class _$ErrorImpl with DiagnosticableTreeMixin implements Error {
   const _$ErrorImpl(this.message);
 
   @override
   final String message;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'HomeState.error(message: $message)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'HomeState.error'))
+      ..add(DiagnosticsProperty('message', message));
   }
 
   @override
@@ -798,6 +1163,7 @@ class _$ErrorImpl implements Error {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(ResponseAnimeOngoing anime) loaded,
+    required TResult Function(ResponseGenre genre) getGenre,
     required TResult Function(String message) error,
   }) {
     return error(message);
@@ -809,6 +1175,7 @@ class _$ErrorImpl implements Error {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(ResponseAnimeOngoing anime)? loaded,
+    TResult? Function(ResponseGenre genre)? getGenre,
     TResult? Function(String message)? error,
   }) {
     return error?.call(message);
@@ -820,6 +1187,7 @@ class _$ErrorImpl implements Error {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(ResponseAnimeOngoing anime)? loaded,
+    TResult Function(ResponseGenre genre)? getGenre,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -835,6 +1203,7 @@ class _$ErrorImpl implements Error {
     required TResult Function(Initial value) initial,
     required TResult Function(Loading value) loading,
     required TResult Function(Loaded value) loaded,
+    required TResult Function(GetGenre value) getGenre,
     required TResult Function(Error value) error,
   }) {
     return error(this);
@@ -846,6 +1215,7 @@ class _$ErrorImpl implements Error {
     TResult? Function(Initial value)? initial,
     TResult? Function(Loading value)? loading,
     TResult? Function(Loaded value)? loaded,
+    TResult? Function(GetGenre value)? getGenre,
     TResult? Function(Error value)? error,
   }) {
     return error?.call(this);
@@ -857,6 +1227,7 @@ class _$ErrorImpl implements Error {
     TResult Function(Initial value)? initial,
     TResult Function(Loading value)? loading,
     TResult Function(Loaded value)? loaded,
+    TResult Function(GetGenre value)? getGenre,
     TResult Function(Error value)? error,
     required TResult orElse(),
   }) {

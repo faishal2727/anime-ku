@@ -1,6 +1,7 @@
 import 'package:anime_ku/domain/entities/anime_detail/response/response_detail_anime.dart';
 import 'package:anime_ku/domain/usecase/get_detail_anime.dart';
 import 'package:bloc/bloc.dart';
+import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'detail_anime_event.dart';
@@ -19,11 +20,11 @@ class DetailAnimeBloc extends Bloc<DetailAnimeEvent, DetailAnimeState> {
     emit(const DetailAnimeState.loading());
     try {
       final data = await getDetailAnime.execute(event.animeId);
-      print("KON $data");
+      debugPrint("KON $data");
 
       emit(data.fold((l) => Error(l.message), (data) => Loaded(data)));
     } catch (e) {
-      print("Pesan Pengecualian: ${e.toString()}");
+      debugPrint("Pesan Pengecualian: ${e.toString()}");
       emit(const DetailAnimeState.error("gagal nih"));
     }
   }

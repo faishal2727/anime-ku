@@ -1,6 +1,5 @@
-import 'package:anime_ku/domain/entities/search/response_search/search_response.dart';
-import 'package:anime_ku/presentation/detail/screen/detail_screen.dart';
 import 'package:anime_ku/presentation/search/bloc/search_bloc.dart';
+import 'package:anime_ku/presentation/search/screen/card_list_search.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -40,7 +39,12 @@ class SearchScreen extends StatelessWidget {
                       child: Text("Error"),
                     );
                   } else if (state is Loaded) {
-                    return buildCard(context, state.searchData);
+                    return ListView.builder(
+                        itemCount: state.searchData.data?.length,
+                        itemBuilder: (context, index) {
+                          return CardListSearch(
+                              anim: state.searchData.data?[index]);
+                        });
                   } else {
                     return Container();
                   }
@@ -52,50 +56,4 @@ class SearchScreen extends StatelessWidget {
       ),
     );
   }
-}
-
-Widget buildCard(BuildContext context, ResponseSearch model) {
-  return ListView.builder(
-    itemCount: model.data?.length,
-    itemBuilder: (context, index) {
-      return InkWell(
-        onTap: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) {
-                print("tai ${model.data![index].id ?? ""}");
-                return DetailScreen(id: model.data?[index].id ?? "");
-              },
-            ),
-          );
-        },
-        child: Container(
-          color: Colors.amber.shade600,
-          margin: const EdgeInsets.all(8.0),
-          padding: const EdgeInsets.all(8.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              FadeInImage.assetNetwork(
-                placeholder: 'assets/images/load.png',
-                fadeInDuration: const Duration(seconds: 2),
-                fadeOutDuration: const Duration(seconds: 2),
-                image: model.data?[index].thumbnail ?? " ",
-                width: MediaQuery.of(context).size.width,
-                height: 300,
-                fit: BoxFit.fill,
-              ),
-              const SizedBox(height: 4.0),
-              Text(
-                model.data?[index].title ?? " ",
-                style:
-                    const TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
-              ),
-            ],
-          ),
-        ),
-      );
-    },
-  );
 }

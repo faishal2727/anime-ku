@@ -43,6 +43,7 @@ dependencies:
   google_fonts: ^5.1.0
   dartz: ^0.10.1
   get_it: ^7.6.0
+  cached_network_image: ^3.3.0
 
 dev_dependencies:
   flutter_test:
@@ -58,6 +59,7 @@ dev_dependencies:
   json_serializable: ^6.7.1
   freezed: ^2.4.3
   webview_flutter: ^4.2.4
+
 
 
 # For information on the generic Dart part of this file, see the

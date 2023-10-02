@@ -1,5 +1,6 @@
 import 'package:anime_ku/data/di/injection.dart' as di;
 import 'package:anime_ku/presentation/detail/bloc/detail_anime_bloc.dart';
+import 'package:anime_ku/presentation/get_by_genre/bloc/get_by_genre_bloc.dart';
 import 'package:anime_ku/presentation/home/bloc/home_bloc.dart';
 import 'package:anime_ku/presentation/home/screen/home_page.dart';
 import 'package:anime_ku/presentation/search/bloc/search_bloc.dart';
@@ -18,11 +19,16 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(
-          create: (context) => di.locator<HomeBloc>()
-            ..add(
-              const HomeEvent.loadMore(),
-            ),
-          child: const HomePage(),
+          create: (context) =>
+              di.locator<HomeBloc>()..add(const HomeEvent.loadMore()),
+        ),
+        BlocProvider(
+          create: (context) =>
+              di.locator<HomeBloc>()..add(const HomeEvent.loadGenre()),
+        ),
+        BlocProvider(
+          create: (context) => di.locator<GetByGenreBloc>()
+            ..add(GetByGenreEvent.loadMore(di.locator())),
         ),
         BlocProvider(
           create: (context) => di.locator<DetailAnimeBloc>()
@@ -37,9 +43,10 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         title: 'aplikasi',
         theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.amber),
           useMaterial3: true,
         ),
+        debugShowCheckedModeBanner: false,
         home: const HomePage(),
       ),
     );
